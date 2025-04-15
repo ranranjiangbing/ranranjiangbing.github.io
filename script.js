@@ -1,4 +1,4 @@
-// 🌟 星空背景生成
+// 星空背景
 function createStarrySky() {
   const canvas = document.getElementById("starCanvas");
   const ctx = canvas.getContext("2d");
@@ -9,7 +9,6 @@ function createStarrySky() {
   canvas.height = height;
 
   const stars = [];
-
   for (let i = 0; i < 150; i++) {
     stars.push({
       x: Math.random() * width,
@@ -43,15 +42,9 @@ function createStarrySky() {
     canvas.width = width;
     canvas.height = height;
   });
-
-  canvas.style.position = "fixed";
-  canvas.style.top = "0";
-  canvas.style.left = "0";
-  canvas.style.zIndex = "-1";
-  canvas.style.background = "black";
 }
 
-// 🌸 打字机式欢迎语
+// 打字欢迎语
 const welcomeMessage = "🌸 見に来てくれてありがとう！ゆっくりしていってね。";
 let idx = 0;
 
@@ -74,7 +67,7 @@ function typeWriterEffect() {
   type();
 }
 
-// 🍄 たけのこメッセージ切り替え
+// 趣味句子切换
 const messages = [
   "🌱 たけのこの季節だね！",
   "🍚 たけのこご飯が食べたい〜",
@@ -87,7 +80,6 @@ function changeMessage() {
   const random = Math.floor(Math.random() * messages.length);
   const messageP = document.getElementById("message");
   messageP.textContent = messages[random];
-
   messageP.style.transition = "color 0.3s ease";
   messageP.style.color = "#007acc";
   setTimeout(() => {
@@ -95,15 +87,16 @@ function changeMessage() {
   }, 500);
 }
 
-// 🎨 控制台输出彩蛋
-console.log("%cWelcome to Ran’s personal space 🌼", "color: #007acc; font-weight: bold; font-size: 16px;");
-console.log("%c『人生は、たけのこを食べるようなものです。』🍽️", "color: #9c27b0; font-style: italic;");
-console.log("%c...just kidding, but enjoy your stay!", "color: #888;");
+// 控制台欢迎语
+console.log("%cWelcome to Ran’s magical homepage! 🐑", "color: #007acc; font-weight: bold; font-size: 16px;");
+console.log("%c『人生は、たけのこを食べるようなものです。』🍽️", "color: #e91e63; font-style: italic;");
+console.log("%c...Enjoy your stay 🌟", "color: #888;");
 
-// 🚀 页面加载后统一启动所有效果
+// 页面加载后统一启动
 window.onload = () => {
   createStarrySky();
   typeWriterEffect();
+
   const btn = document.querySelector("button");
   if (btn) {
     btn.addEventListener("click", changeMessage);
