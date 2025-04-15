@@ -1,5 +1,3 @@
-# script.j
-```
 function changeMessage() {
   const messages = [
     "今日も頑張ろう！",
